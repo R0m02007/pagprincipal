@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoologico De Guadalajara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #05ad1b, #00ff95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .top-bar {
+            width: 100%;
+            background-color: #73ff00;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            color: #000000;
+            z-index: 1000;
+            justify-content: space-between;
+        }
+
+        .top-bar .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .title-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #11b30b;
+            color: #000000;
+            padding: 10px 20px;
+            border-radius: 0 0 80px 80px;
+            font-size: 28px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            text-shadow: 1px 1px #333;
+            margin-top: 70px;
+        }
+
+        .top-bar .icons {
+            display: flex;
+            gap: 25px;
+            position: absolute;
+            right: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .top-bar .icon-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .top-bar .icon-wrapper:hover {
+            transform: translateY(-10px);
+        }
+
+        .top-bar .icon-wrapper i {
+            color: #000000;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .top-bar .icon-wrapper i:hover {
+            color: #FFD700;
+        }
+
+        .top-bar .icon-wrapper span {
+            font-size: 12px;
+            color: #ffffff;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .top-bar .icon-wrapper:hover span {
+            display: block;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(172, 158, 158, 0.363);
+            border-radius: 30px;
+            overflow: hidden;
+            margin-top: 120px;
+            animation: fadeIn 1s ease forwards; 
+
+        }
+
+        .content {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 30px 30px 0;
+            box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Efectos de animación */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        h1 {
+            color: #00d46f;
+            font-size: 42px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease forwards; 
+        }
+
+        h2 {
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease forwards; 
+        }
+
+        h3 {
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            animation: bounce 1s ease forwards; 
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <img src="union.j.jpeg" alt="Logo" class="logo">
+        
+        <div class="title-container">Zoologico De Guadalajara</div>
+        
+        <div class="icons">
+            <div class="icon-wrapper">
+                <i class="fas fa-shopping-cart" title="Tienda"></i>
+                <a href="TIENDITA.html">
+                <span>Tienda</span></a>
+            </div>
+            <div class="icon-wrapper">
+                <i class="fas fa-paw" title="Zoo"></i>
+                <span>Zoologico</span>
+            </div>
+            <div class="icon-wrapper">
+                <i class="fas fa-question-circle" title="Test"></i>
+                <span>??</span>
+            </div>
+            <div class="icon-wrapper">
+                <a href="pagprincipal.html">
+                <i class="fas fa-arrow-left" title="Regresar"></i>
+                <span>Regresar</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <h1>Visión Para Todos</h1>
+            <h2>¿Proposito del Proyecto?</h2>
+            <p>Ejecutar el fortalecimiento del compromiso ambiental de cada persona, a través del conocimiento del papel de los zoológicos en la conservación.</p>
+            <h3>¿Cómo lo haremos?</h3>
+            <p>Realizaremos una excursión al zoológico de Guadalajara para conocer el papel que estos tienen en el cuidado y preservación de los animales. Esto ayudará a las personas a reflexionar sobre su rol en la conservación del ambiente y de los animales.</p>
+        </div>
+        
+        <div class="sidebar">
+            <img src="zoogd.jpg" alt="Imagen del Zoológico">
+        </div>
+    </div>
+
+</body>
+</html>
